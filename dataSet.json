@@ -1,0 +1,75 @@
+{
+  "Brooklyn Technical High School (13K430)": {
+    "Native American": "6",
+    "Asian": "772",
+    "Black": "56",
+    "LatinX": "85",
+    "White": "458",
+    "Multi-Racial": "46",
+    "Unknown": "75"
+  },
+  "\"High School for Mathematics Science and Engineering at City College (HSMSE) (05M692)\"": {
+    "Native American": "0",
+    "Asian": "40",
+    "Black": "5",
+    "LatinX": "12",
+    "White": "65",
+    "Multi-Racial": "11",
+    "Unknown": "19"
+  },
+  "High School of American Studies at Lehman College (10X696)": {
+    "Native American": "1",
+    "Asian": "22",
+    "Black": "7",
+    "LatinX": "14",
+    "White": "68",
+    "Multi-Racial": "6",
+    "Unknown": "13"
+  },
+  "Queens High School for the Sciences at York College (28Q687)": {
+    "Native American": "3",
+    "Asian": "96",
+    "Black": "5",
+    "LatinX": "5",
+    "White": "7",
+    "Multi-Racial": "3",
+    "Unknown": "2"
+  },
+  "Staten Island Technical High School (31R605)": {
+    "Native American": "0",
+    "Asian": "154",
+    "Black": "0",
+    "LatinX": "5",
+    "White": "111",
+    "Multi-Racial": "6",
+    "Unknown": "10"
+  },
+  "Stuyvesant High School (02M475)": {
+    "Native American": "3",
+    "Asian": "507",
+    "Black": "11",
+    "LatinX": "23",
+    "White": "118",
+    "Multi-Racial": "37",
+    "Unknown": "57"
+  },
+  "The Bronx High School of Science (10X445)": {
+    "Native American": "6",
+    "Asian": "394",
+    "Black": "19",
+    "LatinX": "47",
+    "White": "171",
+    "Multi-Racial": "31",
+    "Unknown": "54"
+  },
+  "The Brooklyn Latin School (14K449)": {
+    "Native American": "4",
+    "Asian": "143",
+    "Black": "28",
+    "LatinX": "42",
+    "White": "128",
+    "Multi-Racial": "17",
+    "Unknown": "25"
+  },
+  "": {}
+}
