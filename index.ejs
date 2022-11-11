@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Harry Potter Characters</title>
+  <meta name="author" content="You">
+  <meta name="description" content="A compendium of Harry Potter characters">
+  <meta content="text/html" http-equiv="Content-type" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Harry Potter Characters</h1>
+  </header>
+  <section id="charcter-table">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Native American</th>
+        <th>Asian</th>
+        <th>Black</th>
+        <th>Latinx</th>
+        <th>White</th>
+        <th>Multi-Racial</th>
+        <th>Unknown</th>
+        <th>Total</th>
+      </tr>
+      <% for(character in data){ %>
+      <tr>
+        <td><a href="<%=data[character].link%>.html"><%= character %></a></td>
+        <td><%= data[character].gender %></td>
+        <td><%= data[character].house %></td>
+        <td><%= data[character].species %></td>
+        <td>
+          <% if (data[character].skills.length > 0){ %>
+          <ol>
+            <% data[character].skills.forEach(function(val){%>
+            <li> <%=val%></li>
+            <%}) %>
+          </ol>
+          <%}%>
+        </td>
+      </tr>
+      <%}%>
+    </table>
+  </section>
+
+  <%- include ('global/footer');  %>
+
+</body>
+
+</html>

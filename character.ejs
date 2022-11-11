@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title><%=name%></title>
+  <meta name="author" content="You">
+  <meta name="description" content="A compendium of Harry Potter characters">
+  <meta content="text/html" http-equiv="Content-type" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1><%=name%></h1>
+  </header>
+  <section id="charcter-stats">
+  <h2>Stats</h2>
+  <ul>
+    <li>Gender: <%=stats.gender%></li>
+    <li>House: <%=stats.house%></li>
+    <li>Species: <%=stats.species%></li>
+    <li>Skill:
+      <% if (stats.skills && stats.skills.length > 0){ %>
+      <ol>
+        <% stats.skills.forEach(function(skill){%>
+        <li> <%=skill%></li>
+        <%}) %>
+      </ol>
+      <%}%>
+    </li>
+  </ul>
+  </section>
+
+  <%- include ('global/footer');  %>
+
+</body>
+
+</html>
