@@ -25,7 +25,8 @@ peeps.forEach(function(peep) {
     dataStats['White'] = data_info[5];
     dataStats['Multi-Racial'] = data_info[6];
     dataStats['Unknown'] = data_info[7];
-
+    dataStats['Total'] = data_info[8];
+    
     dataSet[schoolName] = dataStats;
   }
 });
