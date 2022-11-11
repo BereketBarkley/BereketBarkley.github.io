@@ -1,31 +1,33 @@
-const fs = require('fs');//imports file
+//characters = dataSet
+//character_info = data_info
+//character_name = schoolName
+//characterStats = dataStats
+//control alt b to seperate lines
+const fs = require('fs');
 
-let characters = {};//creates object
+let dataSet = {};
 
-let peeps_csv = fs.readFileSync('Characters.csv', 'utf8');//just puts file into variable
+let peeps_csv = fs.readFileSync('SHSAT_DATA.csv', 'utf8');
 
-let peeps = peeps_csv.split("\n");//splits data into rows
+let peeps = peeps_csv.split("\n");
 
-peeps.forEach(function(peep) {//in each of these rows do this
-  let character_info = peep.split(';');
+peeps.forEach(function(peep) {
+  let data_info = peep.split(',');
 
-  let character_name = character_info[1];
+  let schoolName = data_info[0];
 
-  if(character_name!="Name"){//access name and changes it
-    let characterStats = {};
-    characterStats['gender'] = character_info[2];
-    characterStats['house'] = character_info[4];
-    characterStats['species'] = character_info[7];
-    if (character_info[12])
-      characterStats['skills'] = character_info[12].split('|');
-    else {
-      characterStats['skills'] = [];
-    }
+  if(schoolName != "Offer Summary"){
+    let dataStats = {};
+    dataStats['Native American'] = data_info[1];
+    dataStats['Asian'] = data_info[2];
+    dataStats['Black'] = data_info[3];
+    dataStats['LatinX'] = data_info[4];
+    dataStats['White'] = data_info[5];
+    dataStats['Multi-Racial'] = data_info[6];
+    dataStats['Unknown'] = data_info[7];
 
-    characters[character_name]=characterStats; //implements the changes of characterStats
+    dataSet[schoolName] = dataStats;
   }
 });
 
-fs.writeFileSync('potter.json', JSON.stringify(characters), 'utf8'); //writes a text file that will override the existing one
-
-//call back is a procedure that is passed - funtion for loop
+fs.writeFileSync('dataSet.json', JSON.stringify(dataSet), 'utf8');
