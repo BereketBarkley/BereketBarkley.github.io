@@ -1,0 +1,833 @@
+{
+  "Harry James Potter": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Parseltongue", " Defence Against the Dark Arts ", " Seeker"]
+  },
+  "Ronald Bilius Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Wizard chess ", " Quidditch goalkeeping"]
+  },
+  "Hermione Jean Granger": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Almost everything"]
+  },
+  "Albus Percival Wulfric Brian Dumbledore": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Considered by many to be one of the most powerful wizards of his time"]
+  },
+  "Rubeus Hagrid": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Half-Human/Half-Giant",
+    "skills": ["Resistant to stunning spells", " above average strength ", " crossbowmanship"]
+  },
+  "Neville Longbottom": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Herbology"]
+  },
+  "Fred Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Beater"]
+  },
+  "George Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Beater"]
+  },
+  "Ginevra (Ginny) Molly Weasley": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Chaser", " Bat-Bogey hex"]
+  },
+  "Dean Thomas": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Seamus Finnigan": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Pyrotechnics"]
+  },
+  "Lily J. Potter": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": []
+  },
+  "James Potter": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Animagus", " Seeker"]
+  },
+  "Sirius Black": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Animagus", " nonverbal magic", " Charms"]
+  },
+  "Remus John Lupin": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Werewolf",
+    "skills": ["Exceptionally gifted in Defence Against the Dark Arts"]
+  },
+  "Peter Pettigrew": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Animagus"]
+  },
+  "Percy Ignatius Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Intelligent", " hard-working", " a model student"]
+  },
+  "(Bill) William Arthur Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human�(Werewolf�traits)",
+    "skills": ["Highly skilled curse-breaker for Gringotts Wizarding Bank", " very intelligent", " past Hogwarts Head Boy"]
+  },
+  "Charles Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Highly skilled dragon trainer", " one-time Gryffindor Seeker"]
+  },
+  "Lee Jordan�": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Quidditch commentary ", " broadcasting"]
+  },
+  "Oliver Wood": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Keeper", "  Captain of the Gryffindor Quidditch team"]
+  },
+  "Angelina Johnson": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Katie Bell": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Alicia Spinnet": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Lavender Brown": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Divination"]
+  },
+  "Parvati Patil": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Divination"]
+  },
+  "Romilda Vane": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Spiking Chocolate Cauldrons with love potion"]
+  },
+  "Colin Creevey": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Photography"]
+  },
+  "Cormac McLaggen": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Quidditch Keeper"]
+  },
+  "Minerva McGonagall": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Animagus�"]
+  },
+  "Molly Weasley": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Household spells", " healing magic"]
+  },
+  "Arthur Weasley": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Muggle world works"]
+  },
+  "Quirinus Quirrell": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Learned in the theory of Defensive Magic", " less adept in the practise"]
+  },
+  "Cho Chang": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Seeker"]
+  },
+  "Luna Lovegood": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Spotting Nargles"]
+  },
+  "Gilderoy Lockhart": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": []
+  },
+  "Filius Flitwick": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human(goblin ancestry)",
+    "skills": ["Charms"]
+  },
+  "Sybill Patricia Trelawney": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["A Seer, though the gift is unpredictable and unconscious"]
+  },
+  "Garrick Ollivander": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["An incomparable understanding of wandcraft"]
+  },
+  "Myrtle Elizabeth Warren (Moaning Myrtle)": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Ghost",
+    "skills": []
+  },
+  "Padma Patil": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Prefect"]
+  },
+  "Michael Corner": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Potions"]
+  },
+  "Marietta Edgecombe": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Covering up the spots that blight her face after betraying Dumbledore's Army"]
+  },
+  "Terry Boot": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Potions, also knowledgable about Charms"]
+  },
+  "Anthony Goldstein": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Prefect"]
+  },
+  "Severus Snape": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Extremely skilled at potions and Occlumency"]
+  },
+  "Draco Malfoy": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Prefect, Seeker"]
+  },
+  "Vincent Crabbe": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Beater"]
+  },
+  "Gregory Goyle": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Beater"]
+  },
+  "Bellatrix Lestrange": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["She is a duellist of great skill and an experienced Occlumens"]
+  },
+  "Dolores Jane Umbridge": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Her punishment quill is of her own invention"]
+  },
+  "Horace Eugene Flaccus Slughorn": {
+    "gender": "",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Accomplished Occlumens, expert Potioneer, advanced self-transfiguration"]
+  },
+  "Lucius Malfoy": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Skilled duellist and potioneer"]
+  },
+  "Narcissa Malfoy": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": []
+  },
+  "Regulus Arcturus Black": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Seeker"]
+  },
+  "Pansy Parkinson": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Prefect"]
+  },
+  "Blaise Zabini": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Tom Marvolo Riddle": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Dark Lord, Outstanding manipulation, Parseltongue, Heir of Slytherin, Dark magic, Inferi creation and control"]
+  },
+  "Theodore Nott": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": []
+  },
+  "Rodolphus Lestrange": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": []
+  },
+  "Millicent Bulstrode": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": []
+  },
+  "Graham Montague": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Quidditch captain, Chaser"]
+  },
+  "Bloody Baron": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Ghost",
+    "skills": ["Controlling Peeves"]
+  },
+  "Marcus Flint": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Chaser, Captain"]
+  },
+  "Penelope Clearwater": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Prefect"]
+  },
+  "Roger Davies": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Quidditch Captain, Chaser"]
+  },
+  "Marcus Belby": {
+    "gender": "Male",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": []
+  },
+  "Salazar Slytherin": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Accomplished Legilimens and one of the first recorded Parselmouths"]
+  },
+  "Godric Gryffindor": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["The most accomplished duellist of his time"]
+  },
+  "Rowena Ravenclaw": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Human",
+    "skills": ["Extremely skilled witch, known for her intelligence and wisdom"]
+  },
+  "Nicholas de Mimsy-Porpington": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Ghost",
+    "skills": []
+  },
+  "Cuthbert Binns": {
+    "gender": "Male",
+    "house": "",
+    "species": "Ghost",
+    "skills": ["Boring a class with facts that might be interesting if anyone else was giving the lesson"]
+  },
+  "Barty Crouch Jr.": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Skilled potioneer"]
+  },
+  "Charity Burbage": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": ["Teaching and studying the Muggle world"]
+  },
+  "Firenze": {
+    "gender": "Male",
+    "house": "",
+    "species": "Centaur",
+    "skills": []
+  },
+  "Alecto Carrow": {
+    "gender": "Female",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Spreading anti-Muggle propaganda"]
+  },
+  "Amycus Carrow": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Cruciatus Curse"]
+  },
+  "Helga Hufflepuff": {
+    "gender": "Female",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Food-related Charms. Many traditional Hogwarts recipes originated with her"]
+  },
+  "Fat Friar": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Ghost",
+    "skills": ["Curing peasants of the pox"]
+  },
+  "Helena Ravenclaw": {
+    "gender": "Female",
+    "house": "Ravenclaw",
+    "species": "Ghost",
+    "skills": []
+  },
+  "Nymphadora Tonks": {
+    "gender": "Female",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Talented Auror, Metamorphmagus"]
+  },
+  "Pomona Sprout": {
+    "gender": "Female",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Herbology"]
+  },
+  "Newton Scamander": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Magizoology, Order of Merlin, Second Class"]
+  },
+  "Cedric Diggory": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Skilled Seeker"]
+  },
+  "Justin Finch-Fletchley": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": []
+  },
+  "Zacharias Smith": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Chaser"]
+  },
+  "Hannah Abbott": {
+    "gender": "Female",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Defensive spells, learned with Dumbledore's Army"]
+  },
+  "Ernest Macmillan": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Revising, being a Prefect, getting the wrong end of the stick"]
+  },
+  "Susan Bones": {
+    "gender": "Female",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Defensive spells, learned with Dumbledore's Army"]
+  },
+  "Walden Macnair": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Liaising with giants"]
+  },
+  "Augustus Rookwood": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Spying for Lord Voldemort"]
+  },
+  "Antonin Dolohov": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Duelling. Fought and killed Molly Weasley's brothers and Remus Lupin"]
+  },
+  "Corban Yaxley": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human",
+    "skills": ["Imperius curse, undercover work"]
+  },
+  "Igor Karkaroff": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Skilled in the Dark Arts"]
+  },
+  "Kingsley Shacklebolt": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Exceptionally skilled duellist and Auror"]
+  },
+  "Alastor Moody": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["A highly accomplished Auror and an outstanding duellist, also skilled in non-verbal magic"]
+  },
+  "Alice Longbottom": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": ["Auror"]
+  },
+  "Frank Longbottom": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human",
+    "skills": ["Auror"]
+  },
+  "Rufus Scrimgeour": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Highly regarded as a skilled Auror"]
+  },
+  "Cornelius Oswald Fudge": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Turning a blind eye to the continuing threat of Dark Magic in the name of keeping up morale"]
+  },
+  "Barty Crouch Sr.": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Multilingual, able to fight the Imperius curse"]
+  },
+  "Amos Diggory": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Works for the Department for the Regulation and Control of Magical Creatures"]
+  },
+  "Dedalus Diggle": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["An enthusiastic volunteer for the Order and a helpful escort for Harry and his relatives"]
+  },
+  "Elphias Doge": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Writing"]
+  },
+  "Fleur Isabelle Delacour": {
+    "gender": "Female",
+    "house": "Beauxbatons Academy of Magic",
+    "species": "Human",
+    "skills": ["part Veela, and therefore possesses some of their magical powers. She was also selected to compete in the Triwizard Tournament"]
+  },
+  "Aberforth Dumbledore": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Bartending, caring for Ariana"]
+  },
+  "Mundungus Fletcher": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Gathering information for the Order, dealing in stolen cauldrons, 'acquiring' the odd Muggle car"]
+  },
+  "Sturgis Podmore": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Carrying out guard duty for the Order"]
+  },
+  "Hestia Jones": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": ["Carrying out escort missions for the Order"]
+  },
+  "Marlene McKinnon": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": []
+  },
+  "Fabian Prewett": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Duelling"]
+  },
+  "Gideon Prewett": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": ["Duelling"]
+  },
+  "Emmeline Vance": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": []
+  },
+  "Edgar Bones": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human",
+    "skills": ["Said to be a great wizard"]
+  },
+  "Dorcas Meadowes": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human",
+    "skills": []
+  },
+  "Benjy Fenwick": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human",
+    "skills": []
+  },
+  "Madame Olympe Maxime": {
+    "gender": "Female",
+    "house": "Beauxbatons Academy of Magic",
+    "species": "Half-Human/Half-Giant",
+    "skills": ["An �excellent dancer�, in the words of Dumbledore himself"]
+  },
+  "Gabrielle Delacour": {
+    "gender": "Female",
+    "house": "Beauxbatons Academy of Magic",
+    "species": "Human�",
+    "skills": ["part Veela and therefore may possess some of their magical powers"]
+  },
+  "Viktor Krum": {
+    "gender": "Male",
+    "house": "Durmstrang Institute",
+    "species": "Human�",
+    "skills": ["One of the best Seekers in the world"]
+  },
+  "Petunia Dursley": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Vernon Dursley": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Schmoozing clients, pretending magic doesn't exist"]
+  },
+  "Dudley Dursley": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Marge Dursley": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Breeding bulldogs"]
+  },
+  "Dennis Creevey": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human�",
+    "skills": []
+  },
+  "Albus Severus Potter": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human�",
+    "skills": []
+  },
+  "Scorpius Hyperion Malfoy": {
+    "gender": "Male",
+    "house": "Slytherin",
+    "species": "Human�",
+    "skills": []
+  },
+  "Edward Remus Lupin": {
+    "gender": "Male",
+    "house": "Hufflepuff",
+    "species": "Human�(Metamorphmagus)",
+    "skills": []
+  },
+  "James Sirius Potter": {
+    "gender": "Male",
+    "house": "Gryffindor",
+    "species": "Human�",
+    "skills": []
+  },
+  "Rose Granger-Weasley": {
+    "gender": "Female",
+    "house": "Gryffindor",
+    "species": "Human�",
+    "skills": ["Chaser"]
+  },
+  "Argus Filch": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Sniffing out mischief"]
+  },
+  "Poppy Pomfrey": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Skilled medical healer"]
+  },
+  "Rolanda Hooch": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Teaching, flying, refereeing Quidditch matches"]
+  },
+  "Irma Pince": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Aurora Sinistra": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Septima Vector": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Wilhelmina Grubbly-Plank": {
+    "gender": "Female",
+    "house": "",
+    "species": "Human�",
+    "skills": []
+  },
+  "Fenrir Greyback": {
+    "gender": "Male",
+    "house": "",
+    "species": "Werewolf",
+    "skills": ["Physical combat"]
+  },
+  "Gellert Grindelwald": {
+    "gender": "Male",
+    "house": "",
+    "species": "Human�",
+    "skills": ["Duelling"]
+  },
+  "undefined": {
+    "skills": []
+  }
+}
