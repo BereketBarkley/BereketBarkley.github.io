@@ -1,22 +1,24 @@
+//character_info = school_info
+//character_template = school_template
 const fs = require('fs');
 const ejs = require('ejs');
 
-let character_info = JSON.parse(fs.readFileSync('../data/potter.json', 'utf8'));
+let school_info = JSON.parse(fs.readFileSync('../data/dataSet.json', 'utf8'));
 let index_template = fs.readFileSync('views/index.ejs', 'utf8');
-let character_template = fs.readFileSync('views/character.ejs', 'utf8');
+let school_template = fs.readFileSync('views/school.ejs', 'utf8');
 
 /*
   1) Generate a web page for each character
   2) Keep track of the link for index.html
 */
-for (character in character_info){
-  let character_html = ejs.render(character_template, {
-    filename: __dirname + '/views/character.ejs',
-    stats: character_info[character],
-    name: character
+for (school in school_info){
+  let school_html = ejs.render(school_template, {
+    filename: __dirname + '/views/school.ejs',
+    stats: school_info[school],
+    name: school
   });
-  character_info[character].link = getBetterFileName(character);
-  fs.writeFileSync('../public/'+character_info[character].link+'.html', character_html, 'utf8');
+  school_info[school].link = getBetterFileName(school);
+  fs.writeFileSync('../public/'+school_info[school].link+'.html', school_html, 'utf8');
 
 }
 
@@ -25,13 +27,13 @@ for (character in character_info){
 */
 let index_html = ejs.render(index_template, {
   filename: __dirname + '/views/index.ejs',
-  data: character_info
+  data: school_info
 });
 
 fs.writeFileSync('../public/index.html', index_html, 'utf8');
 
-function getBetterFileName(characterName){
-  let betterFileName = characterName.split(" ").join("_");
+function getBetterFileName(schoolName){
+  let betterFileName = schoolName.split(" ").join("_");
   betterFileName = betterFileName.split(".").join("");
   betterFileName = betterFileName.split("(").join("");
   betterFileName = betterFileName.split(")").join("");

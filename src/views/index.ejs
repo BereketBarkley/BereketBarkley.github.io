@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Harry Potter Characters</title>
+  <title>SHSAT admissions information</title>
   <meta name="author" content="You">
-  <meta name="description" content="A compendium of Harry Potter characters">
+  <meta name="description" content="SHSAT schools offers by race">
   <meta content="text/html" http-equiv="Content-type" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" href="styles.css">
@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h1>Harry Potter Characters</h1>
+    <h1>SHSAT schools</h1>
   </header>
   <section id="charcter-table">
     <table>
@@ -28,27 +28,16 @@
         <th>Unknown</th>
         <th>Total</th>
       </tr>
-      <% for(character in data){ %>
+      <% for(school in data){ %>
       <tr>
-        <td><a href="<%=data[character].link%>.html"><%= character %></a></td>
-        <td><%= data[character].gender %></td>
-        <td><%= data[character].house %></td>
-        <td><%= data[character].species %></td>
-        <td>
-          <% if (data[character].skills.length > 0){ %>
-          <ol>
-            <% data[character].skills.forEach(function(val){%>
-            <li> <%=val%></li>
-            <%}) %>
-          </ol>
-          <%}%>
-        </td>
+        <td><a href="<%=data[school].link%>.html"><%= school %></a></td>
+        <td><%= data[school].name %></td>
       </tr>
       <%}%>
     </table>
   </section>
 
-  <%- include ('global/footer');  %>
+  <!-- <%- include ('global/footer');  %> -->
 
 </body>
 

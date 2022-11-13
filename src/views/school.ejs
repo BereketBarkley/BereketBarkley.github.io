@@ -18,10 +18,14 @@
   <section id="charcter-stats">
   <h2>Stats</h2>
   <ul>
-    <li>Gender: <%=stats.gender%></li>
-    <li>House: <%=stats.house%></li>
-    <li>Species: <%=stats.species%></li>
-    <li>Skill:
+    <li>Native American: <%=stats["Native American"]%></li>
+    <li>Asian: <%=stats.Asian%></li>
+    <li>Black: <%=stats.Black%></li>
+    <li>LatinX: <%=stats.LatinX%></li>
+    <li>White: <%=stats.White%></li>
+    <li>Multi-Racial: <%=stats["Multi-Racial"]%></li>
+    <li>Unknown: <%=stats.Unknown%></li>
+    <!-- <li>Skill:
       <% if (stats.skills && stats.skills.length > 0){ %>
       <ol>
         <% stats.skills.forEach(function(skill){%>
@@ -29,11 +33,11 @@
         <%}) %>
       </ol>
       <%}%>
-    </li>
+    </li> -->
   </ul>
   </section>
 
-  <%- include ('global/footer');  %>
+  <!-- <%- include ('global/footer');  %> -->
 
 </body>
 
