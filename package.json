@@ -9,9 +9,12 @@
     "fs": "^0.0.1-security",
     "jes": "^0.6.1"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "open http://localhost:3000 && node server.js"
+    "prebuild": "echo \"prebuild\" ",
+    "build": "cd data && node generateJSON.js && cd .. && cd src && node siteGenerator.js",
+    "postbuild": "open http://localhost:3000 && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC"
