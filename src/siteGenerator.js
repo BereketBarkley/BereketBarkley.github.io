@@ -6,6 +6,8 @@ const ejs = require('ejs');
 let school_info = JSON.parse(fs.readFileSync('../data/dataSet.json', 'utf8'));
 let index_template = fs.readFileSync('views/index.ejs', 'utf8');
 let school_template = fs.readFileSync('views/school.ejs', 'utf8');
+let about_template = fs.readFileSync('views/about.ejs', 'utf8');
+
 
 /*
   1) Generate a web page for each character
@@ -30,7 +32,13 @@ let index_html = ejs.render(index_template, {
   data: school_info
 });
 
+let about_html = ejs.render(about_template, {
+  filename: __dirname + '/views/about.ejs',
+  data: school_info
+});
+
 fs.writeFileSync('../public/index.html', index_html, 'utf8');
+fs.writeFileSync('../public/about.html', about_html, 'utf8');
 
 function getBetterFileName(schoolName){
   let betterFileName = schoolName.split(" ").join("_");
