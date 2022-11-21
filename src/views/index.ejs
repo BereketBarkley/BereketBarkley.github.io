@@ -12,6 +12,8 @@
 </head>
 
 <body>
+   <%- include ('global/nav');  %>
+
   <header>
     <h1>SHSAT schools</h1>
   </header>
@@ -23,6 +25,8 @@
         <td><%= data[school].name %></td>
       </tr>
       <%}%>
+      <td><a href="about.html"> about </a></td>
+
     </table>
   </section>
 
