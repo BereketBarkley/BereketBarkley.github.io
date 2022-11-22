@@ -7,23 +7,19 @@ let school_info = JSON.parse(fs.readFileSync('../data/dataSet.json', 'utf8'));
 let index_template = fs.readFileSync('views/index.ejs', 'utf8');
 let school_template = fs.readFileSync('views/school.ejs', 'utf8');
 let about_template = fs.readFileSync('views/about.ejs', 'utf8');
-let nav_template = fs.readFileSync('views/global/nav.ejs', 'utf8');
-
 
 /*
   1) Generate a web page for each character
   2) Keep track of the link for index.html
 */
-for (school in school_info){
+for (school in school_info) {
+  school_info[school].link = getBetterFileName(school);
   let school_html = ejs.render(school_template, {
     filename: __dirname + '/views/school.ejs',
     stats: school_info[school],
-    name: school,
-  //data: school_info
+    name: school
   });
-  school_info[school].link = getBetterFileName(school);
-  fs.writeFileSync('../public/'+school_info[school].link+'.html', school_html, 'utf8');
-
+  fs.writeFileSync('../public/' + school_info[school].link + '.html', school_html, 'utf8');
 }
 
 /*
@@ -39,17 +35,10 @@ let about_html = ejs.render(about_template, {
   data: school_info
 });
 
-let nav_html = ejs.render(nav_template, {
-  filename: __dirname + '/views/global/nav.ejs',
-  data: school_info
-});
-
 fs.writeFileSync('../public/index.html', index_html, 'utf8');
 fs.writeFileSync('../public/about.html', about_html, 'utf8');
-fs.writeFileSync('../public/nav.html', about_html, 'utf8');
 
-
-function getBetterFileName(schoolName){
+function getBetterFileName(schoolName) {
   let betterFileName = schoolName.split(" ").join("_");
   betterFileName = betterFileName.split(".").join("");
   betterFileName = betterFileName.split("(").join("");
