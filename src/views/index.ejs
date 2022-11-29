@@ -12,25 +12,45 @@
 </head>
 
 <body>
-   <%- include ('global/nav');  %>
+  <%- include ('global/nav'); %>
 
-  <header>
-    <h1>SHSAT schools</h1>
-  </header>
-  <section id="charcter-table">
-    <table>
-      <% for(school in data){ %>
-      <tr>
-        <td><a href="<%=data[school].link%>.html"><%= school %></a></td>
-        <td><%= data[school].name %></td>
-      </tr>
-      <%}%>
-      <td><a href="about.html"> about </a></td>
+    <header>
+      <h1>SHSAT schools</h1>
+    </header>
+    <section id="charcter-table">
+      <table>
+        <% for(school in school_data){ %>
+          <tr>
+            <td><a href="<%=school_data[school].link%>.html">
+                <%= school %>
+              </a></td>
+            <td>
+              <%= school_data[school].name %>
+            </td>
+          </tr>
+          <%}%>
+      </table>
+    </section>
 
-    </table>
-  </section>
+    <header>
+      <h1>Summary</h1>
+    </header>
+    <section id="charcter-table">
+      <table>
+        <% for(school in other_data){ %>
+          <tr>
+            <td><a href="<%=other_data[school].link%>.html">
+                <%= school %>
+              </a></td>
+            <td>
+              <%= other_data[school].name %>
+            </td>
+          </tr>
+          <%}%>
+      </table>
+    </section>
 
-  <!-- <%- include ('global/footer');  %> -->
+    <!-- <%- include ('global/footer');  %> -->
 
 </body>
 
