@@ -19,14 +19,24 @@
     </header>
     <section id="charcter-table">
       <table>
+        <tr>
+          <th>
+            School Name
+          </th>
+          <th>
+            School Class Size
+          </th>
+        </tr>
         <% for(school in school_data){ %>
           <tr>
             <td><a href="<%=school_data[school].link%>.html">
                 <%= school %>
               </a></td>
+
             <td>
-              <%= school_data[school].name %>
+              <%= school_data[school].total %>
             </td>
+          </tr>
           </tr>
           <%}%>
       </table>
@@ -36,18 +46,15 @@
       <h1>Summary</h1>
     </header>
     <section id="charcter-table">
-      <table>
+      <ul>
         <% for(school in other_data){ %>
-          <tr>
-            <td><a href="<%=other_data[school].link%>.html">
+          <li>
+            <a href="<%=other_data[school].link%>.html">
                 <%= school %>
-              </a></td>
-            <td>
-              <%= other_data[school].name %>
-            </td>
-          </tr>
+              </a>
+          </li>
           <%}%>
-      </table>
+      </ul>
     </section>
 
     <p>Summary: The goal of our project is to analyze the opportunity SHSAT schools create for underprivileged students by race group. Certain race groups admit into the specialized schools at a higher rate. Some schools are more divers and some are less diverse. What do you notice? </p>

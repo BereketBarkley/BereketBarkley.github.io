@@ -67,3 +67,10 @@ li{
 section{
   margin-left: 24px;
 }
+
+td, th, table{
+  border-collapse: collapse;
+  border: 1px solid;
+  width: 75%;
+  margin-left: 10px;
+}
