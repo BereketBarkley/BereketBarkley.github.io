@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>
-        Total Testers vs Offers
+        <%=name%>
     </title>
     <meta name="author" content="You">
     <meta name="description" content="A compendium of Harry Potter characters">
@@ -15,106 +15,37 @@
 </head>
 
 <body>
-    <head>
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/css/features.css" rel="stylesheet">
-  <link href="features.css" rel="stylesheet">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-</head>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Index</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/About.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Total_Testers_vs_Offers.html">
-          Total Testers vs Offers
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Offer_Rate.html">
-          Offer Rate
-        </a>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Schools
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Brooklyn_Technical_High_School_13K430.html">
-            Brooklyn Technical High School
-          </a>
-          <a class="dropdown-item"
-            href="High_School_for_Mathematics_Science_and_Engineering_at_City_College_HSMSE_05M692.html">
-            High School for Mathematics Science and Engineering at City College (HSMSE)
-          </a>
-          <a class="dropdown-item" href="High_School_of_American_Studies_at_Lehman_College_10X696.html">
-            High School of American Studies at Lehman College
-          </a>
-          <a class="dropdown-item" href="Queens_High_School_for_the_Sciences_at_York_College_28Q687.html">
-            Queens High School for the Sciences at York College
-          </a>
-          <a class="dropdown-item" href="Staten_Island_Technical_High_School_31R605.html">
-            Staten Island Technical High School
-          </a>
-          <a class="dropdown-item" href="Stuyvesant_High_School_02M475.html">
-            Stuyvesant High School (02M475)
-          </a>
-          <a class="dropdown-item" href="The_Bronx_High_School_of_Science_10X445.html">
-            The Bronx High School of Science (10X445)
-          </a>
-          <a class="dropdown-item" href="The_Brooklyn_Latin_School_14K449.html">
-            The Brooklyn Latin School (14K449)
-          </a>
-          <!-- <div class="dropdown-divider"></div> -->
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <%- include ('global/nav'); %>
 
         <header>
             <h1>
-                Total Testers vs Offers
+                <%=name%>
             </h1>
         </header>
         <section id="charcter-stats">
             <h2>Stats</h2>
             <div id="my_dataviz"></div>
             <ul>
-                <li>Native American: 254 vs 23
+                <li>Native American: <%=stats["Native American"]%>
                 </li>
-                <li>Asian: 8565 vs 2128
+                <li>Asian: <%=stats.Asian%>
                 </li>
-                <li>Black: 5714 vs 131
+                <li>Black: <%=stats.Black%>
                 </li>
-                <li>LatinX: 7142 vs 233
+                <li>LatinX: <%=stats.LatinX%>
                 </li>
-                <li>White: 4734 vs 1126
+                <li>White: <%=stats.White%>
                 </li>
-                <li>Multi-Racial: 498 vs 157
+                <li>Multi-Racial: <%=stats["Multi-Racial"]%>
                 </li>
-                <li>Unknown: 762 vs 255
+                <li>Unknown: <%=stats.Unknown%>
                 </li>
             </ul>
         </section>
-        
-<footer>
- Data gathered from <a href="https://data.cityofnewyork.us/dataset/2022-SHSAT-DISCOVERY-OVERALL-SUMMARY/unse-x4pq/data"> (2022 SHSAT + DISCOVERY OVERALL SUMMARY)</a>
-</footer>
-
+        <%- include ('global/footer'); %>
 
             <span id='variableJSON' hidden>
-                {&#34;Native American&#34;:&#34;254 vs 23&#34;,&#34;Asian&#34;:&#34;8565 vs 2128&#34;,&#34;Black&#34;:&#34;5714 vs 131&#34;,&#34;LatinX&#34;:&#34;7142 vs 233&#34;,&#34;White&#34;:&#34;4734 vs 1126&#34;,&#34;Multi-Racial&#34;:&#34;498 vs 157&#34;,&#34;Unknown&#34;:&#34;762 vs 255&#34;,&#34;total&#34;:&#34;27669 vs 4053&#34;,&#34;link&#34;:&#34;Total_Testers_vs_Offers&#34;}
+                <%= JSON.stringify(stats); %>
             </span>
             <script>
                 var data = JSON.parse($('#variableJSON').text());

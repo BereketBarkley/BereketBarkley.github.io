@@ -10,6 +10,8 @@ let school_template = fs.readFileSync('views/school.ejs', 'utf8');
 let summary_template = fs.readFileSync('views/summary.ejs', 'utf8');
 let about_template = fs.readFileSync('views/about.ejs', 'utf8');
 //let conclusions_template = fs.readFileSync('views/conclusions.ejs', 'utf8');
+let testers_offers_template = fs.readFileSync('views/testersOffers.ejs', 'utf8');
+let offer_rate_template = fs.readFileSync('views/offerRate.ejs', 'utf8');
 
 /*
   1) Generate a web page for each character
@@ -25,13 +27,13 @@ for (school in school_info) {
   fs.writeFileSync('../public/' + school_info[school].link + '.html', school_html, 'utf8');
 }
 
-for (other in other_info) {
-  other_info[other].link = getBetterFileName(other);
-  let summary_html = ejs.render(summary_template, {
-    filename: __dirname + '/views/summary.ejs',
-    stats: other_info[other],
-    name: other
-  });
+ for (other in other_info) {
+   other_info[other].link = getBetterFileName(other);
+   let summary_html = ejs.render(summary_template, {
+     filename: __dirname + '/views/summary.ejs',
+     stats: other_info[other],
+     name: other
+   });
   fs.writeFileSync('../public/' + other_info[other].link + '.html', summary_html, 'utf8');
 }
 
@@ -49,6 +51,18 @@ let about_html = ejs.render(about_template, {
   data: school_info
 });
 
+let testers_offers_html = ejs.render(testers_offers_template, {
+  filename: __dirname + '/views/testersOffers.ejs',
+  stats: other_info["Total Testers vs Offers"],
+  name: "Total Testers vs Offers"
+})
+
+let offer_rate_html = ejs.render(offer_rate_template, {
+  filename: __dirname + '/views/offerRate.ejs',
+  stats: other_info["Offer Rate"],
+  name: "Offer Rate"
+})
+
 /*let conclusions_html = ejs.render(conclusions_template,{
   filename: __dirname + '/views/conclusions.ejs',
   data: school_info
@@ -57,6 +71,8 @@ let about_html = ejs.render(about_template, {
 fs.writeFileSync('../public/index.html', index_html, 'utf8');
 fs.writeFileSync('../public/about.html', about_html, 'utf8');
 //fs.writeFileSync('../public/conclusions.html', conclusions_html, 'utf8');
+fs.writeFileSync('../public/Total_Testers_vs_Offers.html', testers_offers_html, 'utf8')
+fs.writeFileSync('../public/Offer_Rate.html', offer_rate_html, 'utf8')
 
 
 function getBetterFileName(schoolName) {

@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>
-    Offer Rate
-  </title>
-  <meta name="author" content="You">
-  <meta name="description" content="A compendium of Harry Potter characters">
-  <meta content="text/html" http-equiv="Content-type" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <title>
+        Offer Rate
+    </title>
+    <meta name="author" content="You">
+    <meta name="description" content="A compendium of Harry Potter characters">
+    <meta content="text/html" http-equiv="Content-type" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.js"></script>
 </head>
 
 <body>
-  <head>
+    <head>
   <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/css/features.css" rel="stylesheet">
   <link href="features.css" rel="stylesheet">
@@ -81,40 +82,106 @@
   </div>
 </nav>
 
-
-  <header>
-    <h1>
-      Offer Rate
-    </h1>
-  </header>
-  <section id="charcter-stats">
-    <h2>Stats</h2>
-    <div id="my_dataviz"></div>
-    <ul>
-      <li>Native American: 9.0%
-      </li>
-      <li>Asian: 24.8%
-      </li>
-      <li>Black: 2.3%
-      </li>
-      <li>LatinX: 3.3%
-      </li>
-      <li>White: 23.8%
-      </li>
-      <li>Multi-Racial: 31.5%
-      </li>
-      <li>Unknown: 33.5%
-      </li>
-    </ul>
-  </section>
-  <svg width="600" height="500"></svg>
-  <p>Summary: The goal of our project is to analyze the opportunity SHSAT schools create for underprivileged students by race group. Certain race groups admit into the specialized schools at a higher rate. Some schools are more divers and some are less diverse. What do you notice? </p>
-
-  
+        <header>
+            <h1>
+                Offer Rate
+            </h1>
+        </header>
+        <section id="charcter-stats">
+            <h2>Stats</h2>
+            <div id="my_dataviz"></div>
+            <ul>
+                <li>Native American: 9.0%
+                </li>
+                <li>Asian: 24.8%
+                </li>
+                <li>Black: 2.3%
+                </li>
+                <li>LatinX: 3.3%
+                </li>
+                <li>White: 23.8%
+                </li>
+                <li>Multi-Racial: 31.5%
+                </li>
+                <li>Unknown: 33.5%
+                </li>
+            </ul>
+        </section>
+        
 <footer>
  Data gathered from <a href="https://data.cityofnewyork.us/dataset/2022-SHSAT-DISCOVERY-OVERALL-SUMMARY/unse-x4pq/data"> (2022 SHSAT + DISCOVERY OVERALL SUMMARY)</a>
 </footer>
 
+
+            <span id='variableJSON' hidden>
+                {&#34;Native American&#34;:&#34;9.0%&#34;,&#34;Asian&#34;:&#34;24.8%&#34;,&#34;Black&#34;:&#34;2.3%&#34;,&#34;LatinX&#34;:&#34;3.3%&#34;,&#34;White&#34;:&#34;23.8%&#34;,&#34;Multi-Racial&#34;:&#34;31.5%&#34;,&#34;Unknown&#34;:&#34;33.5%&#34;,&#34;total&#34;:&#34;14.6%&#34;,&#34;link&#34;:&#34;Offer_Rate&#34;}
+            </span>
+            <script>
+                var data = JSON.parse($('#variableJSON').text());
+                $('#variableJSON').remove();
+
+                // console.log("data", data);
+
+
+                const margin = { top: 10, right: 30, bottom: 90, left: 300 },
+                    width = 720 - margin.left - margin.right,
+                    height = 450 - margin.top - margin.bottom;
+
+                // append the svg object to the body of the page
+                const svg = d3.select("#my_dataviz")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom + 50)
+                    .append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+                let races = []
+                let offerRates = []
+                for (let i = 0; i < Object.keys(data).length - 1; i++) {
+                    let race = String(Object.keys(data)[i]);
+                    races[i] = race;
+                    let rate = String(data[race]).substring(0, String(data[race]).length - 1);
+                    offerRates[i] = rate;
+                }
+
+                // console.log("offerRates", offerRates);
+
+                const x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(offerRates)
+                    .padding(0.2);
+
+                const labels =
+                    d3.scaleBand()
+                        .range([0, width])
+                        .domain(races)
+                        .padding(0.5);
+
+                svg.append("g")
+                    .attr("transform", `translate(0,${height})`)
+                    .call(d3.axisBottom(labels))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
+
+                // Add Y axis
+                const y = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([height, 0]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Bars
+                svg.selectAll(".bar")
+                    .data(offerRates)
+                    .enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) { return x(d); })
+                    .attr("width", x.bandwidth())
+                    .attr("fill", "#fcc277")
+                    .attr("height", d => height - y(d))
+                    .attr("y", function (d) { return y(d); })
+            </script>
 </body>
 
 </html>

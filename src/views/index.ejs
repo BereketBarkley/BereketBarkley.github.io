@@ -9,6 +9,7 @@
   <meta content="text/html" http-equiv="Content-type" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v6.js"></script>
 </head>
 
 <body>
@@ -42,6 +43,7 @@
       </table>
     </section>
 
+    <div id="my_dataviz"></div>
     <header>
       <h1>Summary</h1>
     </header>
@@ -50,20 +52,93 @@
         <% for(school in other_data){ %>
           <li>
             <a href="<%=other_data[school].link%>.html">
-                <%= school %>
-              </a>
+              <%= school %>
+            </a>
           </li>
           <%}%>
       </ul>
     </section>
 
-    <p>Summary: The goal of our project is to analyze the opportunity SHSAT schools create for underprivileged students by race group. Certain race groups admit into the specialized schools at a higher rate. Some schools are more divers and some are less diverse. What do you notice? </p>
+    <p>Summary: The goal of our project is to analyze the opportunity SHSAT schools create for underprivileged students
+      by race group. Certain race groups admit into the specialized schools at a higher rate. Some schools are more
+      divers and some are less diverse. What do you notice? </p>
     <p>Data perspectives:
-    Which race groups have a higher admittance rate?
-    which schools are more diverse?
-    How do class sizes and number of applicants affect this data?</p>
+      Which race groups have a higher admittance rate?
+      which schools are more diverse?
+      How do class sizes and number of applicants affect this data?</p>
 
     <%- include ('global/footer'); %>
+
+      <span id='variableJSON' hidden>
+        <%= JSON.stringify(school_data); %>
+      </span>
+
+      <script>
+        var school_data = JSON.parse($('#variableJSON').text());
+        $('#variableJSON').remove();
+
+        // console.log("school_data", school_data);
+        // console.log("keys", Object.keys(school_data));
+
+        // set the dimensions and margins of the graph
+        const margin = { top: 10, right: 30, bottom: 90, left: 300 },
+          width = 720 - margin.left - margin.right,
+          height = 450 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        const svg = d3.select("#my_dataviz")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom + 400)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        let names = []
+        let classSizes = []
+        for (let i = 0; i < Object.keys(school_data).length; i++) {
+          names[i] = (Object.keys(school_data))[i];
+          classSizes[i] = Number(school_data[Object.keys(school_data)[i]].total);
+        }
+
+        // console.log("classSizes", classSizes);
+
+        const x = d3.scaleBand()
+          .range([0, width])
+          .domain(classSizes)
+          .padding(0.2);
+
+        const labels =
+          d3.scaleBand()
+            .range([0, width])
+            .domain(names)
+            .padding(0.5);
+
+        svg.append("g")
+          .attr("transform", `translate(0,${height})`)
+          .call(d3.axisBottom(labels))
+          .selectAll("text")
+          .attr("transform", "translate(-10,0)rotate(-45)")
+          .style("text-anchor", "end");
+
+        // Add Y axis
+        const y = d3.scaleLinear()
+          .domain([0, 2000])
+          .range([height, 0]);
+        svg.append("g")
+          .call(d3.axisLeft(y));
+
+        // Bars
+        svg.selectAll(".bar")
+          .data(classSizes)
+          .enter().append("rect")
+          .attr("class", "bar")
+          .attr("x", function (d) { return x(d); })
+          .attr("width", x.bandwidth())
+          .attr("fill", "#69b3a2")
+          .attr("height", d => height - y(d))
+          .attr("y", function (d) { return y(d); })
+
+      </script>
 
 </body>
 

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        <%=name%>
+    </title>
+    <meta name="author" content="You">
+    <meta name="description" content="A compendium of Harry Potter characters">
+    <meta content="text/html" http-equiv="Content-type" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.js"></script>
+</head>
+
+<body>
+    <%- include ('global/nav'); %>
+
+        <header>
+            <h1>
+                <%=name%>
+            </h1>
+        </header>
+        <section id="charcter-stats">
+            <h2>Stats</h2>
+            <div id="my_dataviz"></div>
+            <ul>
+                <li>Native American: <%=stats["Native American"]%>
+                </li>
+                <li>Asian: <%=stats.Asian%>
+                </li>
+                <li>Black: <%=stats.Black%>
+                </li>
+                <li>LatinX: <%=stats.LatinX%>
+                </li>
+                <li>White: <%=stats.White%>
+                </li>
+                <li>Multi-Racial: <%=stats["Multi-Racial"]%>
+                </li>
+                <li>Unknown: <%=stats.Unknown%>
+                </li>
+            </ul>
+        </section>
+        <%- include ('global/footer'); %>
+
+            <span id='variableJSON' hidden>
+                <%= JSON.stringify(stats); %>
+            </span>
+            <script>
+                var data = JSON.parse($('#variableJSON').text());
+                $('#variableJSON').remove();
+
+                // console.log("data", data);
+
+
+                const margin = { top: 10, right: 30, bottom: 90, left: 300 },
+                    width = 720 - margin.left - margin.right,
+                    height = 450 - margin.top - margin.bottom;
+
+                // append the svg object to the body of the page
+                const svg = d3.select("#my_dataviz")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom + 50)
+                    .append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+                let races = []
+                let offerRates = []
+                for (let i = 0; i < Object.keys(data).length - 1; i++) {
+                    let race = String(Object.keys(data)[i]);
+                    races[i] = race;
+                    let rate = String(data[race]).substring(0, String(data[race]).length - 1);
+                    offerRates[i] = rate;
+                }
+
+                // console.log("offerRates", offerRates);
+
+                const x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(offerRates)
+                    .padding(0.2);
+
+                const labels =
+                    d3.scaleBand()
+                        .range([0, width])
+                        .domain(races)
+                        .padding(0.5);
+
+                svg.append("g")
+                    .attr("transform", `translate(0,${height})`)
+                    .call(d3.axisBottom(labels))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
+
+                // Add Y axis
+                const y = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([height, 0]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Bars
+                svg.selectAll(".bar")
+                    .data(offerRates)
+                    .enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) { return x(d); })
+                    .attr("width", x.bandwidth())
+                    .attr("fill", "#fcc277")
+                    .attr("height", d => height - y(d))
+                    .attr("y", function (d) { return y(d); })
+            </script>
+</body>
+
+</html>

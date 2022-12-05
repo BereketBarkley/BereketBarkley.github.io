@@ -1,4 +1,4 @@
-## Harry Potter data from: <https://www.kaggle.com/gulsahdemiryurek/harry-potter-dataset>
+## SHSAT data from: <https://data.cityofnewyork.us/dataset/2022-SHSAT-DISCOVERY-OVERALL-SUMMARY/unse-x4pq/data>
 
 ## `npm install fs`
 
