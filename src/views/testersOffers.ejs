@@ -142,7 +142,17 @@
                 svg.append("g")
                     .attr("class", "y axis")
                     .call(yAxis);
-            </script>
+
+                svg.append("text")
+                    .attr("class", "y label")
+                    .attr("text-anchor", "end")
+                    .attr("y", -50)
+                    .attr("x", -75)
+                    .attr("dy", "0.75em")
+                    .attr("transform", "rotate(-90)")
+                    .style("font", "14px")
+                    .text("Number of Students");
+          </script>
 </body>
 
 </html>

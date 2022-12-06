@@ -24,7 +24,7 @@ for (school in school_info) {
     stats: school_info[school],
     name: school
   });
-  fs.writeFileSync('../public/' + school_info[school].link + '.html', school_html, 'utf8');
+  fs.writeFileSync('../docs/' + school_info[school].link + '.html', school_html, 'utf8');
 }
 
  for (other in other_info) {
@@ -34,7 +34,7 @@ for (school in school_info) {
      stats: other_info[other],
      name: other
    });
-  fs.writeFileSync('../public/' + other_info[other].link + '.html', summary_html, 'utf8');
+  fs.writeFileSync('../docs/' + other_info[other].link + '.html', summary_html, 'utf8');
 }
 
 /*
@@ -68,11 +68,10 @@ let offer_rate_html = ejs.render(offer_rate_template, {
   data: school_info
 });
 */
-fs.writeFileSync('../public/index.html', index_html, 'utf8');
-fs.writeFileSync('../public/about.html', about_html, 'utf8');
-//fs.writeFileSync('../public/conclusions.html', conclusions_html, 'utf8');
-fs.writeFileSync('../public/Total_Testers_vs_Offers.html', testers_offers_html, 'utf8')
-fs.writeFileSync('../public/Offer_Rate.html', offer_rate_html, 'utf8')
+fs.writeFileSync('../docs/index.html', index_html, 'utf8');
+fs.writeFileSync('../docs/about.html', about_html, 'utf8');
+fs.writeFileSync('../docs/Total_Testers_vs_Offers.html', testers_offers_html, 'utf8')
+fs.writeFileSync('../docs/Offer_Rate.html', offer_rate_html, 'utf8')
 
 
 function getBetterFileName(schoolName) {
