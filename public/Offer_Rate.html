@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>
-        Total Testers vs Offers
+        Offer Rate
     </title>
     <meta name="author" content="You">
     <meta name="description" content="A compendium of Harry Potter characters">
@@ -28,7 +28,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Index</a>
+        <a class="nav-link" href="/index.html">Index</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/About.html">About</a>
@@ -82,28 +82,29 @@
   </div>
 </nav>
 
+
         <header>
             <h1>
-                Total Testers vs Offers
+                Offer Rate
             </h1>
         </header>
         <section id="charcter-stats">
             <h2>Stats</h2>
             <div id="my_dataviz"></div>
             <ul>
-                <li>Native American: 254 vs 23
+                <li>Native American: 9.0%
                 </li>
-                <li>Asian: 8565 vs 2128
+                <li>Asian: 24.8%
                 </li>
-                <li>Black: 5714 vs 131
+                <li>Black: 2.3%
                 </li>
-                <li>LatinX: 7142 vs 233
+                <li>LatinX: 3.3%
                 </li>
-                <li>White: 4734 vs 1126
+                <li>White: 23.8%
                 </li>
-                <li>Multi-Racial: 498 vs 157
+                <li>Multi-Racial: 31.5%
                 </li>
-                <li>Unknown: 762 vs 255
+                <li>Unknown: 33.5%
                 </li>
             </ul>
         </section>
@@ -117,7 +118,7 @@
 
 
             <span id='variableJSON' hidden>
-                {&#34;Native American&#34;:&#34;254 vs 23&#34;,&#34;Asian&#34;:&#34;8565 vs 2128&#34;,&#34;Black&#34;:&#34;5714 vs 131&#34;,&#34;LatinX&#34;:&#34;7142 vs 233&#34;,&#34;White&#34;:&#34;4734 vs 1126&#34;,&#34;Multi-Racial&#34;:&#34;498 vs 157&#34;,&#34;Unknown&#34;:&#34;762 vs 255&#34;,&#34;total&#34;:&#34;27669 vs 4053&#34;,&#34;link&#34;:&#34;Total_Testers_vs_Offers&#34;}
+                {&#34;Native American&#34;:&#34;9.0%&#34;,&#34;Asian&#34;:&#34;24.8%&#34;,&#34;Black&#34;:&#34;2.3%&#34;,&#34;LatinX&#34;:&#34;3.3%&#34;,&#34;White&#34;:&#34;23.8%&#34;,&#34;Multi-Racial&#34;:&#34;31.5%&#34;,&#34;Unknown&#34;:&#34;33.5%&#34;,&#34;total&#34;:&#34;14.6%&#34;,&#34;link&#34;:&#34;Offer_Rate&#34;}
             </span>
             <script>
                 var data = JSON.parse($('#variableJSON').text());
@@ -125,95 +126,65 @@
 
                 // console.log("data", data);
 
-                let models = [];
-                // 7 races represented in dataset
-                for (let i = 0; i < 7; i++) {
-                    let race = Object.keys(data)[i];
-                    let s = String(data[race]).split(" ");
-                    let testers = s[0];
-                    let offers = s[2];
-                    let obj = {
-                        "race": race,
-                        "testers": testers,
-                        "offers": offers,
-                    }
-                    models[i] = obj;
-                }
 
-                models = models.map(i => {
-                    i.race = i.race;
-                    return i;
-                });
+                const margin = { top: 10, right: 30, bottom: 90, left: 300 },
+                    width = 720 - margin.left - margin.right,
+                    height = 450 - margin.top - margin.bottom;
 
-                var container = d3.select("#my_dataviz"),
-                    width = 500,
-                    height = 300,
-                    margin = { top: 30, right: 20, bottom: 30, left: 50 },
-                    barPadding = .2,
-                    axisTicks = { qty: 5, outerSize: 0, dateFormat: '%m-%d' };
-
-                var svg = container
+                // append the svg object to the body of the page
+                const svg = d3.select("#my_dataviz")
                     .append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom + 50)
                     .append("g")
                     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-                var xScale0 = d3.scaleBand().range([0, width - margin.left - margin.right]).padding(barPadding);
-                var xScale1 = d3.scaleBand();
-                var yScale = d3.scaleLinear().range([height - margin.top - margin.bottom, 0]);
+                let races = []
+                let offerRates = []
+                for (let i = 0; i < Object.keys(data).length - 1; i++) {
+                    let race = String(Object.keys(data)[i]);
+                    races[i] = race;
+                    let rate = String(data[race]).substring(0, String(data[race]).length - 1);
+                    offerRates[i] = rate;
+                }
 
-                var xAxis = d3.axisBottom(xScale0).tickSizeOuter(axisTicks.outerSize);
-                var yAxis = d3.axisLeft(yScale).ticks(axisTicks.qty).tickSizeOuter(axisTicks.outerSize);
+                // console.log("offerRates", offerRates);
 
-                xScale0.domain(models.map(d => d.race));
-                xScale1.domain(['testers', 'offers']).range([0, xScale0.bandwidth()]);
-                yScale.domain([0, d3.max(models, d => d.testers > d.offers ? d.testers : d.offers)]);
+                const x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(offerRates)
+                    .padding(0.2);
 
-                var race = svg.selectAll(".race")
-                    .data(models)
-                    .enter().append("g")
-                    .attr("class", "race")
-                    .attr("transform", d => `translate(${xScale0(d.race)},0)`);
+                const labels =
+                    d3.scaleBand()
+                        .range([0, width])
+                        .domain(races)
+                        .padding(0.5);
 
-                /* Add testers bars */
-                race.selectAll(".bar.testers")
-                    .data(d => [d])
-                    .enter()
-                    .append("rect")
-                    .attr("class", "bar testers")
-                    .style("fill", "blue")
-                    .attr("x", d => xScale1('testers'))
-                    .attr("y", d => yScale(d.testers))
-                    .attr("width", xScale1.bandwidth())
-                    .attr("height", d => {
-                        return height - margin.top - margin.bottom - yScale(d.testers)
-                    });
-
-                /* Add offers bars */
-                race.selectAll(".bar.offers")
-                    .data(d => [d])
-                    .enter()
-                    .append("rect")
-                    .attr("class", "bar offers")
-                    .style("fill", "green")
-                    .attr("x", d => xScale1('offers'))
-                    .attr("y", d => yScale(d.offers))
-                    .attr("width", xScale1.bandwidth())
-                    .attr("height", d => {
-                        return height - margin.top - margin.bottom - yScale(d.offers)
-                    });
-
-                // Add the X Axis
                 svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
-                    .call(xAxis);
+                    .attr("transform", `translate(0,${height})`)
+                    .call(d3.axisBottom(labels))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
 
-                // Add the Y Axis
+                // Add Y axis
+                const y = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([height, 0]);
                 svg.append("g")
-                    .attr("class", "y axis")
-                    .call(yAxis);
+                    .call(d3.axisLeft(y));
+
+                // Bars
+                svg.selectAll(".bar")
+                    .data(offerRates)
+                    .enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) { return x(d); })
+                    .attr("width", x.bandwidth())
+                    .attr("fill", "#fcc277")
+                    .attr("height", d => height - y(d))
+                    .attr("y", function (d) { return y(d); })
 
                 svg.append("text")
                     .attr("class", "y label")
@@ -222,9 +193,9 @@
                     .attr("x", -75)
                     .attr("dy", "0.75em")
                     .attr("transform", "rotate(-90)")
-                    .style("font", "14px times")
-                    .text("Number of Students");
-          </script>
+                    .style("size", "18px")
+                    .text("Rate of Offer");
+            </script>
 </body>
 
 </html>

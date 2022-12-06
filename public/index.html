@@ -26,7 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Index</a>
+        <a class="nav-link" href="/index.html">Index</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/About.html">About</a>
@@ -79,6 +79,7 @@
     </ul>
   </div>
 </nav>
+
 
     <header>
       <h1>SHSAT schools</h1>
@@ -300,6 +301,16 @@
           .attr("fill", "#69b3a2")
           .attr("height", d => height - y(d))
           .attr("y", function (d) { return y(d); })
+
+        svg.append("text")
+          .attr("class", "y label")
+          .attr("text-anchor", "end")
+          .attr("y", -50)
+          .attr("x", -75)
+          .attr("dy", "0.75em")
+          .attr("transform", "rotate(-90)")
+          .style("font", "20px")
+          .text("Number of Students");
 
       </script>
 

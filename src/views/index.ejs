@@ -135,6 +135,16 @@
           .attr("height", d => height - y(d))
           .attr("y", function (d) { return y(d); })
 
+        svg.append("text")
+          .attr("class", "y label")
+          .attr("text-anchor", "end")
+          .attr("y", -50)
+          .attr("x", -75)
+          .attr("dy", "0.75em")
+          .attr("transform", "rotate(-90)")
+          .style("font", "20px")
+          .text("Number of Students");
+
       </script>
 
 </body>
