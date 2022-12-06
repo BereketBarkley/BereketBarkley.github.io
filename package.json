@@ -14,9 +14,9 @@
     "prebuild": "echo \"prebuild\" ",
     "build": "cd data && node generateJSON.js && cd .. && cd src && node siteGenerator.js",
     "postbuild": "open http://localhost:3000 && node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
 
-    "publish": "git add ./docs && git commit -m \"automated update\" && git push https://github.com/shivshamdasani1/shivshamdasani1.github.io main && start https://shivshamdasani1.github.io/" ,
+    "publish": "git add ./docs && git commit -m \"automated update\" && git push https://github.com/shivshamdasani1/shivshamdasani1.github.io main && start https://shivshamdasani1.github.io/" 
   },
   "author": "",
   "license": "ISC"
